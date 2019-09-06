@@ -1,0 +1,386 @@
+﻿<!-- 正文开始 -->
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <div class="layui-form toolbar">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label w-auto">账号：</label>
+                        <div class="layui-input-inline mr0">
+                            <input name="username" class="layui-input" type="text" placeholder="输入账号"/>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label w-auto">昵称：</label>
+                        <div class="layui-input-inline mr0">
+                            <input name="nickname" class="layui-input" type="text" placeholder="输入昵称"/>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label w-auto">性别：</label>
+                        <div class="layui-input-inline mr0">
+                            <select name="sex">
+                                <option value="">选择性别</option>
+                                <option value="1">男</option>
+                                <option value="0">女</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <button class="layui-btn icon-btn" lay-filter="formSubSearchUser" lay-submit>
+                            <i class="layui-icon">&#xe615;</i>搜索
+                        </button>
+                        <button id="btnAddUser" class="layui-btn icon-btn"><i class="layui-icon">&#xe654;</i>添加</button>
+                        <button id="btnBatchDelUser" class="layui-btn layui-btn-danger icon-btn"><i class="layui-icon">&#xe640;</i>批量删除</button>
+                        <button id="btnDelAllUser" class="layui-btn layui-btn-danger icon-btn"><i class="layui-icon">&#xe640;</i>清空</button>
+                    </div>
+                </div>
+            </div>
+
+            <table class="layui-table" id="tableUser" lay-filter="tableUser"></table>
+        </div>
+    </div>
+</div>
+
+<!-- 表格操作列 -->
+<script type="text/html" id="tableBarUser">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">修改</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    <a class="layui-btn layui-btn-xs" lay-event="reset">重置密码</a>
+</script>
+<!-- 表格状态列 -->
+<script type="text/html" id="tableStateUser">
+    <input type="checkbox" lay-filter="ckStateUser" value="{{d.id}}" lay-skin="switch"
+           lay-text="启用|禁用" {{d.flag==1?'checked':''}}/>
+</script>
+<script type="text/html" id="tableStateSex">
+    {{d.sex==1?'男':'女'}}
+</script>
+<!-- 表单弹窗 -->
+<script type="text/html" id="modelUser">
+    <form id="modelUserForm" lay-filter="modelUserForm" class="layui-form model-form">
+        <input name="id" type="hidden"/>
+        <div class="layui-form-item">
+            <label class="layui-form-label">账号</label>
+            <div class="layui-input-block">
+                <input name="username" placeholder="请输入账号" type="text" class="layui-input" maxlength="20"
+                       lay-verType="tips" lay-verify="required" required/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">昵称</label>
+            <div class="layui-input-block">
+                <input name="nickname" placeholder="请输入昵称" type="text" class="layui-input" maxlength="20"
+                       lay-verType="tips" lay-verify="required" required/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">性别</label>
+            <div class="layui-input-block">
+                <input type="radio" name="sex" value="1" title="男" checked/>
+                <input type="radio" name="sex" value="0" title="女"/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">住址</label>
+            <div class="layui-input-block">
+                <input name="address" placeholder="请输入住址" type="text" class="layui-input" maxlength="50"
+                       lay-verType="tips" lay-verify="required" required/>
+            </div>
+        </div>
+        <!--<div class="layui-form-item">-->
+            <!--<label class="layui-form-label">角色</label>-->
+            <!--<div class="layui-input-block">-->
+                <!--<select name="roleId" lay-verType="tips" lay-verify="required">-->
+                    <!--<option value="">请选择</option>-->
+                    <!--<option value="1">管理员</option>-->
+                    <!--<option value="2">普通用户</option>-->
+                    <!--<option value="3">游客</option>-->
+                <!--</select>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="layui-form-item text-right model-form-footer">
+            <button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">取消</button>
+            <button class="layui-btn" lay-filter="modelSubmitUser" lay-submit>保存</button>
+        </div>
+    </form>
+</script>
+
+<!-- js部分 -->
+<script type="text/javascript" src="assets/js/checkLogin.js"></script>
+<script>
+    /**
+     * icon说明 {1:：叉叉，2：勾，3：问号，4：锁，5：哭丧脸，6：笑脸，7：感叹号}
+     */
+    layui.use(['layer', 'form', 'table', 'tableX', 'util', 'admin', 'config'], function () {
+        var $ = layui.jquery;
+        var layer = layui.layer;
+        var form = layui.form;
+        var table = layui.table;
+        var tableX = layui.tableX;
+        var util = layui.util;
+        var admin = layui.admin;
+        var config = layui.config;
+
+        form.render('select'); //刷新select选择框渲染
+        // 渲染表格
+        // （如果这里使用tableX扩展插件，就可以实现字段加sort自动后端排序。会自动加上sort和order参数，例如：user?page=1&limit=10&sort=sex&order=asc。）
+        var insTb = tableX.render({
+            id: 'tableUserId', // 容器唯一ID
+            elem: '#tableUser', // 表格id
+            url: config.base_server + '/user/userList?nowTime=' + new Date().getTime(), //数据接口，加上nowtime可以防止缓存。
+            request: { // 设置后请求数据时的参数将会变为：?pageNum=1&pageSize=30
+                pageName: 'pageNum', //页码的参数名称，默认：page
+                limitName: 'pageSize' //每页数据量的参数名，默认：limit
+            },
+            page: true, //开启分页
+            // limit: 15, // 每页显示的条数（默认：10）
+            text: {
+                none: '暂无相关数据' //默认：无数据。注：该属性为 layui 2.2.5 开始新增
+            },
+            // initSort是前端排序，如果是服务端分页只会排序当前页。
+            // initSort: {
+            //     field: 'username' //排序字段，对应 cols 设定的各字段名
+            //     ,type: 'asc' //排序方式  asc: 升序、desc: 降序、null: 默认排序
+            // },
+            cellMinWidth: 100, // 单元格宽度
+            cols: [[ //表头
+                {type: 'checkbox'}, // normal（常规列，无需设定）,checkbox（复选框列）,radio（单选框列，2.2.4新增）,numbers（序号列）,space（空列）
+                {field: 'id', hide: false, title: '主键'}, // 是否初始隐藏列，默认：false。layui 2.4.0 新增
+                {field: 'username', sort: false, title: '账号'},
+                {field: 'nickname', sort: false, title: '昵称'},
+                {field: 'sex', sort: false, width: 100, templet: '#tableStateSex', title: '性别'},
+                {
+                    field: 'createTime', sort: true, templet: function (d) {
+                        return util.toDateString(d.createTime);
+                    }, width: 200, title: '创建时间'
+                },
+                {field: 'flag', sort: false, templet: '#tableStateUser', title: '状态'},
+                {field: 'address', sort: false, title: '住址'},
+                {field: 'headerImg', sort: false, title: '头像'},
+                {align: 'center', toolbar: '#tableBarUser', title: '操作', minWidth: 200}
+            ]],
+            // 无论是异步请求数据，还是直接赋值数据，都会触发该回调。你可以利用该回调做一些表格以外元素的渲染。
+            done: function(res, curr, count){
+                //如果是异步请求数据方式，res即为你接口返回的信息。
+                //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
+                console.log(res);
+
+                //得到当前页码
+                // console.log(curr);
+
+                //得到数据总量
+                // console.log(count);
+            }
+        });
+
+        // 添加
+        $('#btnAddUser').click(function () {
+            showEditModel();
+        });
+
+        // 批量删除
+        $('#btnBatchDelUser').click(function () {
+            var checkStatus = table.checkStatus('tableUserId'); //tableUserId 即为基础参数 id 对应的值
+            // console.log("选中行的数据: " + JSON.stringify(checkStatus.data)); //获取选中行的数据
+            console.log("选中行数量: " + checkStatus.data.length); //获取选中行数量，可作为是否有选中行的条件
+            // console.log("是否全选: " + checkStatus.isAll ); //表格是否全选
+
+            if (checkStatus.data.length == 0) {
+                layer.msg('请选择要删除的数据！', {icon: 2});
+                return false;
+            }
+
+            // 遍历获取到id
+            var ids = '';
+            var userNames = '';
+            $.each(checkStatus.data, function (i, v) {
+                ids += v.id + ',';
+                userNames += v.nickname + '，';
+            });
+
+            console.log("ids: " + ids); //获取对应的id集合
+
+            userNames = userNames.substring(0,userNames.lastIndexOf('，'));
+            layer.confirm('确定要删除 [' + userNames + '] 这些数据吗？', {
+                icon: 5, // {1:：叉叉，2：勾，3：问号，4：锁，5：哭丧脸，6：笑脸，7：感叹号}
+                skin: 'layui-layer-admin',
+                shade: .1
+            }, function (i) {
+                layer.close(i);
+                layer.load(2);
+                admin.req('/user/batchDelUser', {
+                    nowTime: new Date().getTime(),
+                    ids: ids
+                }, function (res) {
+                    layer.closeAll('loading');
+                    if (res.code == 200) {
+                        layer.msg(res.message, {icon: 1});
+                        insTb.reload({}, 'data');
+                    } else {
+                        layer.msg(res.message, {icon: 2});
+                    }
+                }, 'get');
+            });
+
+        });
+
+        // 清空所有数据
+        $('#btnDelAllUser').click(function () {
+            layer.confirm('确定要清空所有数据吗？请慎重选择！', {
+                icon: 5, // {1:：叉叉，2：勾，3：问号，4：锁，5：哭丧脸，6：笑脸，7：感叹号}
+                skin: 'layui-layer-admin',
+                shade: .1
+            }, function (i) {
+                layer.close(i);
+                layer.load(2);
+                admin.req('/user/btnDelAllUser', {
+                    nowTime: new Date().getTime()
+                }, function (res) {
+                    layer.closeAll('loading');
+                    if (res.code == 200) {
+                        layer.msg(res.message, {icon: 1});
+                        insTb.reload({}, 'data');
+                    } else {
+                        layer.msg(res.message, {icon: 2});
+                    }
+                }, 'get');
+            });
+        });
+
+        // // 监听复选框选择
+        // table.on('checkbox(tableUser)', function(obj){
+        //     console.log("当前是否选中状态: " + obj.checked); //当前是否选中状态
+        //     console.log("选中行的相关数据: " + obj.data); //选中行的相关数据
+        //     console.log("单选/全选: " + obj.type); //如果触发的是全选，则为：all，如果触发的是单选，则为：one
+        // });
+
+        // 搜索
+        form.on('submit(formSubSearchUser)', function (data) {
+            console.log('data.field: ' + data.field);
+            insTb.reload({
+                url: '/user/userListSearch?nowTime=' + new Date().getTime(), //数据接口，加上nowtime可以防止缓存。
+                where: data.field, // 设定异步数据接口的额外参数
+                page: {
+                    curr: 1 //重新从第 1 页开始
+                }
+            });
+        }); //只重载数据
+
+        // 行工具条点击事件
+        table.on('tool(tableUser)', function (obj) {
+            var data = obj.data;
+            var layEvent = obj.event;
+            if (layEvent === 'edit') { // 修改
+                showEditModel(data);
+            } else if (layEvent === 'del') { // 删除
+                doDel(data.id, data.nickname);
+            } else if (layEvent === 'reset') { // 重置密码
+                resetPsw(data.id, data.nickname);
+            }
+        });
+
+        // 显示表单弹窗
+        function showEditModel(mUser) {
+            admin.open({
+                type: 1,
+                area: '500px', // 一个就代表宽度，宽高都自定义：['500px', '300px']
+                title: (mUser ? '修改' : '添加') + '用户',
+                content: $('#modelUser').html(),
+                success: function (layero, dIndex) {
+                    $(layero).children('.layui-layer-content').css('overflow', 'visible');
+                    var url = mUser ? '/user/editUser' : '/user/addUser';
+                    // 回显数据
+                    form.val('modelUserForm', mUser);
+                    // 表单提交事件
+                    form.on('submit(modelSubmitUser)', function (data) {
+                        layer.load(2);
+                        admin.req(url, data.field, function (res) {
+                            layer.closeAll('loading');
+                            if (res.code == 200) {
+                                layer.close(dIndex);
+                                layer.msg(res.message, {icon: 1});
+                                insTb.reload({}, 'data');
+                            } else {
+                                layer.msg(res.message, {icon: 2});
+                            }
+                        }, 'post');
+                        return false;
+                    });
+                }
+            });
+        }
+
+        // 删除
+        function doDel(id, nickname) {
+            layer.confirm('确定要删除“' + nickname + '”吗？', {
+                icon: 5, // {1:：叉叉，2：勾，3：问号，4：锁，5：哭丧脸，6：笑脸，7：感叹号}
+                skin: 'layui-layer-admin',
+                shade: .1
+            }, function (i) {
+                layer.close(i);
+                layer.load(2);
+                admin.req('/user/delUser', {
+                    id: id
+                }, function (res) {
+                    layer.closeAll('loading');
+                    if (res.code == 200) {
+                        layer.msg(res.message, {icon: 1});
+                        insTb.reload({}, 'data');
+                    } else {
+                        layer.msg(res.message, {icon: 2});
+                    }
+                }, 'get');
+            });
+        }
+
+        //监听行单击事件
+        // table.on('row(tableUser)', function(obj){
+        //     var data = obj.data;
+        //     console.log("当前行数据: " + data); // 得到当前行数据
+        //     console.log("当前行id: " + data.id);// 当前行id
+        //     $("#id").val(data.id);// 把值赋给隐藏域id
+        // });
+
+        // 修改用户状态
+        form.on('switch(ckStateUser)', function (obj) {
+            console.log("id: " + this.value);
+            layer.load(2);
+            admin.req('/user/switchStatus', {
+                id: this.value,
+                flag: obj.elem.checked ? 1 : 0
+            }, function (res) {
+                layer.closeAll('loading');
+                if (res.code == 200) {
+                    layer.msg(res.message, {icon: 1});
+                } else {
+                    layer.msg(res.message, {icon: 2});
+                    $(obj.elem).prop('checked', !obj.elem.checked);
+                    form.render('checkbox');
+                }
+            }, 'get');
+        });
+
+        // 重置密码
+        function resetPsw(id, nickname) {
+            layer.confirm('确定要重置“' + nickname + '”的登录密码吗？', {
+                skin: 'layui-layer-admin',
+                shade: .1
+            }, function (i) {
+                layer.close(i);
+                layer.load(2);
+                admin.req('/user/resetPassword', {
+                    id: id
+                }, function (res) {
+                    layer.closeAll('loading');
+                    if (res.code == 200) {
+                        layer.msg(res.message, {icon: 1});
+                    } else {
+                        layer.msg(res.message, {icon: 2});
+                    }
+                }, 'get');
+            });
+        }
+
+    });
+</script>

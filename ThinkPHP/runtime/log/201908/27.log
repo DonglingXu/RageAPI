@@ -1,0 +1,90 @@
+---------------------------------------------------------------
+
+[2019-08-27T00:20:31+08:00] 127.0.0.1 GET demo.top/api/v1/index/menus
+[运行时间：0.119754s] [吞吐率：8.35req/s] [内存消耗：2,694.55kb] [文件加载：66]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/<version>/<controller>/<function>',
+  'route' => 'api/:version.:controller/:function',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+    'version' => 'v1',
+    'controller' => 'index',
+    'function' => 'menus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/index.html',
+  'origin' => 'http://spa.ml',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+  'controller' => 'index',
+  'function' => 'menus',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001786s ] mysql:host=127.0.0.1;port=3306;dbname=demo.top;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_menu` [ RunTime:0.007852s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_menu` WHERE  `status` = 1 [ RunTime:0.006924s ]
+---------------------------------------------------------------
+
+[2019-08-27T00:20:32+08:00] 127.0.0.1 GET demo.top/api/v1/menu
+[运行时间：0.047066s] [吞吐率：21.25req/s] [内存消耗：2,687.06kb] [文件加载：66]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/v1/menu',
+  'route' => 'api/v1.menu/lists',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/index.html',
+  'origin' => 'http://spa.ml',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001292s ] mysql:host=127.0.0.1;port=3306;dbname=demo.top;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_menu` [ RunTime:0.003970s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_menu` [ RunTime:0.001260s ]

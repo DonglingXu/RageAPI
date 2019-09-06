@@ -1,0 +1,953 @@
+---------------------------------------------------------------
+
+[2019-09-06T00:15:00+08:00] 127.0.0.1 GET demo.top/phpinfo
+[运行时间：0.032178s] [吞吐率：31.08req/s] [内存消耗：1,230.22kb] [文件加载：50]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+
+[2019-09-06T00:19:24+08:00] 127.0.0.1 POST demo.top/api/v1/token
+[运行时间：0.043904s] [吞吐率：22.78req/s] [内存消耗：1,877.27kb] [文件加载：61]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/<version>/token',
+  'route' => 'api/:version.token/token',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+    'version' => 'v1',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/login.html',
+  'content-type' => 'application/json;charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '169',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+)
+[ info ] [ PARAM ] array (
+  'mobile' => '13084565605',
+  'password' => '123456',
+  'appid' => 'tp5restfultest',
+  'nonce' => 'sds5455',
+  'timestamp' => '1567700364',
+  'key' => '123456',
+  'sign' => 'e2569f6f9bc7ff55a5e21d9ee5d3322b',
+  'version' => 'v1',
+)
+---------------------------------------------------------------
+
+[2019-09-06T00:20:12+08:00] 127.0.0.1 POST demo.top/api/v1/token
+[运行时间：0.083127s] [吞吐率：12.03req/s] [内存消耗：1,880.46kb] [文件加载：62]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/<version>/token',
+  'route' => 'api/:version.token/token',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+    'version' => 'v1',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/login.html',
+  'content-type' => 'application/json;charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '169',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+)
+[ info ] [ PARAM ] array (
+  'mobile' => '13084565605',
+  'password' => '123456',
+  'appid' => 'tp5restfultest',
+  'nonce' => 'sds5455',
+  'timestamp' => '1567700412',
+  'key' => '123456',
+  'sign' => 'cc8b40e04a65d67384924b442fac49c2',
+  'version' => 'v1',
+)
+---------------------------------------------------------------
+
+[2019-09-06T00:20:55+08:00] 127.0.0.1 POST demo.top/api/v1/token
+[运行时间：0.183655s] [吞吐率：5.44req/s] [内存消耗：3,194.35kb] [文件加载：75]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/<version>/token',
+  'route' => 'api/:version.token/token',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+    'version' => 'v1',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/login.html',
+  'content-type' => 'application/json;charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '169',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+)
+[ info ] [ PARAM ] array (
+  'mobile' => '13084565605',
+  'password' => '123456',
+  'appid' => 'tp5restfultest',
+  'nonce' => 'sds5455',
+  'timestamp' => '1567700455',
+  'key' => '123456',
+  'sign' => '458d2b1bf5d512681ea9498c85a09e33',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010951s ] mysql:host=127.0.0.1;port=3306;dbname=demo.top;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_sys_manager` [ RunTime:0.008451s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_sys_manager` LIMIT 1 [ RunTime:0.009407s ]
+[ sql ] [ SQL ] SELECT `id`,`mobile` FROM `dl_sys_manager` WHERE  `mobile` = '13084565605'  AND `password_hash` = 'e10adc3949ba59abbe56e057f20f883e' [ RunTime:0.000619s ]
+---------------------------------------------------------------
+
+[2019-09-06T00:21:09+08:00] 127.0.0.1 POST demo.top/api/v1/token
+[运行时间：0.075762s] [吞吐率：13.20req/s] [内存消耗：3,195.49kb] [文件加载：75]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/<version>/token',
+  'route' => 'api/:version.token/token',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+    'version' => 'v1',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/login.html',
+  'content-type' => 'application/json;charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '169',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+)
+[ info ] [ PARAM ] array (
+  'mobile' => '13084565607',
+  'password' => '123456',
+  'appid' => 'tp5restfultest',
+  'nonce' => 'sds5455',
+  'timestamp' => '1567700468',
+  'key' => '123456',
+  'sign' => 'aa92509edda996991909a797e5293100',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010932s ] mysql:host=127.0.0.1;port=3306;dbname=demo.top;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_sys_manager` [ RunTime:0.002438s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_sys_manager` LIMIT 1 [ RunTime:0.000665s ]
+[ sql ] [ SQL ] SELECT `id`,`mobile` FROM `dl_sys_manager` WHERE  `mobile` = '13084565607'  AND `password_hash` = 'e10adc3949ba59abbe56e057f20f883e' [ RunTime:0.000589s ]
+---------------------------------------------------------------
+
+[2019-09-06T00:21:11+08:00] 127.0.0.1 GET demo.top/api/v1authorities.json
+[运行时间：0.046145s] [吞吐率：21.67req/s] [内存消耗：1,740.13kb] [文件加载：62]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-09-06T00:21:11+08:00] 127.0.0.1 GET demo.top/api/v1/menu
+[运行时间：0.132695s] [吞吐率：7.54req/s] [内存消耗：3,136.44kb] [文件加载：82]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/v1/menu',
+  'route' => 'api/v1.menu/lists',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'authorization' => 'USERID dHA1cmVzdGZ1bHRlc3Q6RDc5ajFyMU9RSGlxRmV6TGhZRTRtM2d5Y2RLOHQ1YkE6dW5kZWZpbmVk',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000937s ] mysql:host=127.0.0.1;port=3306;dbname=demo.top;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_sys_menu` [ RunTime:0.003738s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_sys_menu` [ RunTime:0.002321s ]
+---------------------------------------------------------------
+
+[2019-09-06T00:32:21+08:00] 127.0.0.1 GET demo.top/api/v1authorities.json
+[运行时间：0.044410s] [吞吐率：22.52req/s] [内存消耗：1,740.17kb] [文件加载：62]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-09-06T00:32:21+08:00] 127.0.0.1 GET demo.top/api/v1/menu
+[运行时间：0.046097s] [吞吐率：21.69req/s] [内存消耗：1,744.21kb] [文件加载：65]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/v1/menu',
+  'route' => 'api/v1.menu/lists',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'authorization' => 'USERID dHA1cmVzdGZ1bHRlc3Q6RDc5ajFyMU9RSGlxRmV6TGhZRTRtM2d5Y2RLOHQ1YkE6dW5kZWZpbmVk',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-09-06T00:35:30+08:00] 127.0.0.1 POST demo.top/api/v1/token
+[运行时间：0.140970s] [吞吐率：7.09req/s] [内存消耗：3,264.56kb] [文件加载：80]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/<version>/token',
+  'route' => 'api/:version.token/token',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+    'version' => 'v1',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/login.html',
+  'content-type' => 'application/json;charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '169',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+)
+[ info ] [ PARAM ] array (
+  'mobile' => '13084565607',
+  'password' => '123456',
+  'appid' => 'tp5restfultest',
+  'nonce' => 'sds5455',
+  'timestamp' => '1567701330',
+  'key' => '123456',
+  'sign' => '50f622bfc5f37cbec7ca625174064571',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011586s ] mysql:host=127.0.0.1;port=3306;dbname=demo.top;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_sys_manager` [ RunTime:0.002905s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_sys_manager` LIMIT 1 [ RunTime:0.001194s ]
+[ sql ] [ SQL ] SELECT `id`,`mobile` FROM `dl_sys_manager` WHERE  `mobile` = '13084565607'  AND `password_hash` = 'e10adc3949ba59abbe56e057f20f883e' [ RunTime:0.001809s ]
+[ error ] [0]致命错误: Function name must be a string[E:\WWW\Tp51\application\api\controller\v1\Token.php:201]
+---------------------------------------------------------------
+
+[2019-09-06T00:35:54+08:00] 127.0.0.1 POST demo.top/api/v1/token
+[运行时间：0.072659s] [吞吐率：13.76req/s] [内存消耗：3,195.73kb] [文件加载：75]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/<version>/token',
+  'route' => 'api/:version.token/token',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+    'version' => 'v1',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/login.html',
+  'content-type' => 'application/json;charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '169',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+)
+[ info ] [ PARAM ] array (
+  'mobile' => '13084565607',
+  'password' => '123456',
+  'appid' => 'tp5restfultest',
+  'nonce' => 'sds5455',
+  'timestamp' => '1567701354',
+  'key' => '123456',
+  'sign' => '2d29d21726b5d055326257bbbe498df0',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011636s ] mysql:host=127.0.0.1;port=3306;dbname=demo.top;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_sys_manager` [ RunTime:0.002476s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_sys_manager` LIMIT 1 [ RunTime:0.000672s ]
+[ sql ] [ SQL ] SELECT `id`,`mobile` FROM `dl_sys_manager` WHERE  `mobile` = '13084565607'  AND `password_hash` = 'e10adc3949ba59abbe56e057f20f883e' [ RunTime:0.000631s ]
+---------------------------------------------------------------
+
+[2019-09-06T00:35:56+08:00] 127.0.0.1 GET demo.top/api/v1authorities.json
+[运行时间：0.035605s] [吞吐率：28.09req/s] [内存消耗：1,740.17kb] [文件加载：62]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-09-06T00:35:56+08:00] 127.0.0.1 GET demo.top/api/v1/menu
+[运行时间：0.080123s] [吞吐率：12.48req/s] [内存消耗：3,172.34kb] [文件加载：83]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/v1/menu',
+  'route' => 'api/v1.menu/lists',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'authorization' => 'USERID dHA1cmVzdGZ1bHRlc3Q6aUVlMTJLbzcwZFVGVzQ4WnA3UVQ2dlYzYUM1c1JxYmc6dW5kZWZpbmVk',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011509s ] mysql:host=127.0.0.1;port=3306;dbname=demo.top;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_sys_menu` [ RunTime:0.004059s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_sys_menu` [ RunTime:0.001254s ]
+---------------------------------------------------------------
+
+[2019-09-06T01:36:21+08:00] 127.0.0.1 GET demo.top/api/v1/manager/lists?nowTime=1567704981746&pageNum=1&pageSize=10&Authorization=USERID%20dHA1cmVzdGZ1bHRlc3Q6aUVlMTJLbzcwZFVGVzQ4WnA3UVQ2dlYzYUM1c1JxYmc6dW5kZWZpbmVk
+[运行时间：0.079177s] [吞吐率：12.63req/s] [内存消耗：3,171.80kb] [文件加载：83]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/<version>/<controller>/<function>',
+  'route' => 'api/:version.:controller/:function',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+    'version' => 'v1',
+    'controller' => 'manager',
+    'function' => 'lists',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'nowTime' => '1567704981746',
+  'pageNum' => '1',
+  'pageSize' => '10',
+  'Authorization' => 'USERID dHA1cmVzdGZ1bHRlc3Q6aUVlMTJLbzcwZFVGVzQ4WnA3UVQ2dlYzYUM1c1JxYmc6dW5kZWZpbmVk',
+  'version' => 'v1',
+  'controller' => 'manager',
+  'function' => 'lists',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010582s ] mysql:host=127.0.0.1;port=3306;dbname=demo.top;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_sys_manager` [ RunTime:0.003056s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_sys_manager` [ RunTime:0.000509s ]
+---------------------------------------------------------------
+
+[2019-09-06T22:45:00+08:00] 127.0.0.1 GET demo.top/api/v1/manager/lists?nowTime=1567781100105&pageNum=1&pageSize=10&Authorization=USERID%20dHA1cmVzdGZ1bHRlc3Q6aUVlMTJLbzcwZFVGVzQ4WnA3UVQ2dlYzYUM1c1JxYmc6dW5kZWZpbmVk
+[运行时间：0.266748s] [吞吐率：3.75req/s] [内存消耗：1,790.34kb] [文件加载：66]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/<version>/<controller>/<function>',
+  'route' => 'api/:version.:controller/:function',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+    'version' => 'v1',
+    'controller' => 'manager',
+    'function' => 'lists',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'nowTime' => '1567781100105',
+  'pageNum' => '1',
+  'pageSize' => '10',
+  'Authorization' => 'USERID dHA1cmVzdGZ1bHRlc3Q6aUVlMTJLbzcwZFVGVzQ4WnA3UVQ2dlYzYUM1c1JxYmc6dW5kZWZpbmVk',
+  'version' => 'v1',
+  'controller' => 'manager',
+  'function' => 'lists',
+)
+---------------------------------------------------------------
+
+[2019-09-06T22:45:03+08:00] 127.0.0.1 OPTIONS demo.top/api/v1/menu
+[运行时间：0.092163s] [吞吐率：10.85req/s] [内存消耗：1,157.20kb] [文件加载：47]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/index.html',
+  'accept' => '*/*',
+  'access-control-request-headers' => 'authorization',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'origin' => 'http://spa.ml',
+  'access-control-request-method' => 'GET',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-09-06T22:45:03+08:00] 127.0.0.1 GET demo.top/api/v1/menu
+[运行时间：0.046223s] [吞吐率：21.63req/s] [内存消耗：1,780.07kb] [文件加载：66]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/v1/menu',
+  'route' => 'api/v1.menu/lists',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'authorization' => 'USERID dHA1cmVzdGZ1bHRlc3Q6aUVlMTJLbzcwZFVGVzQ4WnA3UVQ2dlYzYUM1c1JxYmc6dW5kZWZpbmVk',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-09-06T22:45:26+08:00] 127.0.0.1 OPTIONS demo.top/api/v1/token
+[运行时间：0.023446s] [吞吐率：42.65req/s] [内存消耗：1,157.20kb] [文件加载：47]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/login.html',
+  'accept' => '*/*',
+  'access-control-request-headers' => 'content-type',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'origin' => 'http://spa.ml',
+  'access-control-request-method' => 'POST',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-09-06T22:45:27+08:00] 127.0.0.1 POST demo.top/api/v1/token
+[运行时间：0.171460s] [吞吐率：5.83req/s] [内存消耗：3,196.05kb] [文件加载：75]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/<version>/token',
+  'route' => 'api/:version.token/token',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+    'version' => 'v1',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/login.html',
+  'content-type' => 'application/json;charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '169',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+)
+[ info ] [ PARAM ] array (
+  'mobile' => '13084565607',
+  'password' => '123456',
+  'appid' => 'tp5restfultest',
+  'nonce' => 'sds5455',
+  'timestamp' => '1567781126',
+  'key' => '123456',
+  'sign' => 'b863651f7ab515c6b8d3cc31286fc2b0',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001846s ] mysql:host=127.0.0.1;port=3306;dbname=demo.top;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_sys_manager` [ RunTime:0.007045s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_sys_manager` LIMIT 1 [ RunTime:0.000845s ]
+[ sql ] [ SQL ] SELECT `id`,`mobile` FROM `dl_sys_manager` WHERE  `mobile` = '13084565607'  AND `password_hash` = 'e10adc3949ba59abbe56e057f20f883e' [ RunTime:0.000588s ]
+---------------------------------------------------------------
+
+[2019-09-06T22:45:29+08:00] 127.0.0.1 GET demo.top/api/v1/manager/lists?nowTime=1567781129145&pageNum=1&pageSize=10&Authorization=USERID%20dHA1cmVzdGZ1bHRlc3Q6Y1ZocmxxRUNaN3lmOEIzZWRIVWJqTjVzMjVPQTR0eFM6dW5kZWZpbmVk
+[运行时间：0.095056s] [吞吐率：10.52req/s] [内存消耗：3,171.80kb] [文件加载：83]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/<version>/<controller>/<function>',
+  'route' => 'api/:version.:controller/:function',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+    'version' => 'v1',
+    'controller' => 'manager',
+    'function' => 'lists',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'nowTime' => '1567781129145',
+  'pageNum' => '1',
+  'pageSize' => '10',
+  'Authorization' => 'USERID dHA1cmVzdGZ1bHRlc3Q6Y1ZocmxxRUNaN3lmOEIzZWRIVWJqTjVzMjVPQTR0eFM6dW5kZWZpbmVk',
+  'version' => 'v1',
+  'controller' => 'manager',
+  'function' => 'lists',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001650s ] mysql:host=127.0.0.1;port=3306;dbname=demo.top;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_sys_manager` [ RunTime:0.002162s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_sys_manager` [ RunTime:0.000620s ]
+---------------------------------------------------------------
+
+[2019-09-06T22:45:29+08:00] 127.0.0.1 GET demo.top/api/v1/menu
+[运行时间：0.128461s] [吞吐率：7.78req/s] [内存消耗：3,172.34kb] [文件加载：83]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/v1/menu',
+  'route' => 'api/v1.menu/lists',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'authorization' => 'USERID dHA1cmVzdGZ1bHRlc3Q6Y1ZocmxxRUNaN3lmOEIzZWRIVWJqTjVzMjVPQTR0eFM6dW5kZWZpbmVk',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010976s ] mysql:host=127.0.0.1;port=3306;dbname=demo.top;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_sys_menu` [ RunTime:0.002600s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_sys_menu` [ RunTime:0.002244s ]
+---------------------------------------------------------------
+
+[2019-09-06T22:49:34+08:00] 127.0.0.1 GET demo.top/api/v1/manager/lists?nowTime=1567781374090&pageNum=1&pageSize=10&Authorization=USERID%20dHA1cmVzdGZ1bHRlc3Q6Y1ZocmxxRUNaN3lmOEIzZWRIVWJqTjVzMjVPQTR0eFM6dW5kZWZpbmVk
+[运行时间：0.042026s] [吞吐率：23.79req/s] [内存消耗：1,790.34kb] [文件加载：66]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/<version>/<controller>/<function>',
+  'route' => 'api/:version.:controller/:function',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+    'version' => 'v1',
+    'controller' => 'manager',
+    'function' => 'lists',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'nowTime' => '1567781374090',
+  'pageNum' => '1',
+  'pageSize' => '10',
+  'Authorization' => 'USERID dHA1cmVzdGZ1bHRlc3Q6Y1ZocmxxRUNaN3lmOEIzZWRIVWJqTjVzMjVPQTR0eFM6dW5kZWZpbmVk',
+  'version' => 'v1',
+  'controller' => 'manager',
+  'function' => 'lists',
+)
+---------------------------------------------------------------
+
+[2019-09-06T22:49:34+08:00] 127.0.0.1 GET demo.top/api/v1/menu
+[运行时间：0.039431s] [吞吐率：25.36req/s] [内存消耗：1,780.07kb] [文件加载：66]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/v1/menu',
+  'route' => 'api/v1.menu/lists',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'authorization' => 'USERID dHA1cmVzdGZ1bHRlc3Q6Y1ZocmxxRUNaN3lmOEIzZWRIVWJqTjVzMjVPQTR0eFM6dW5kZWZpbmVk',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-09-06T22:49:41+08:00] 127.0.0.1 GET demo.top/api/v1/menu
+[运行时间：0.103016s] [吞吐率：9.71req/s] [内存消耗：1,759.86kb] [文件加载：66]
+[ info ] [ LANG ] E:\WWW\Tp51\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'api/v1/menu',
+  'route' => 'api/v1.menu/lists',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'cross_domain' => true,
+    'header' => 
+    array (
+      'Access-Control-Allow-Credentials' => 'true',
+      'Access-Control-Allow-Methods' => 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers' => 'Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With',
+      'Access-Control-Allow-Origin' => '*',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://spa.ml/spa/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'origin' => 'http://spa.ml',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'demo.top',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)

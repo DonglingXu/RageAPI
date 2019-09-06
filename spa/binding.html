@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>绑定账号</title>
+    <link rel="stylesheet" href="assets/libs/layui/css/layui.css"/>
+    <link rel="stylesheet" href="assets/css/login.css?v=312">
+</head>
+<body>
+<div class="login-wrapper">
+    <div class="login-header">
+        <img src="assets/images/logo.png"> EasyWeb后台开发框架
+    </div>
+    <div class=" login-body">
+        <div class="layui-card">
+            <div class="layui-card-header">
+                <i class="layui-icon layui-icon-engine"></i>&nbsp;&nbsp;用户登录
+            </div>
+            <form class="layui-card-body layui-form layui-form-pane">
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><i class="layui-icon layui-icon-username"></i></label>
+                    <div class="layui-input-block">
+                        <input name="username" type="text" placeholder="账号" class="layui-input"
+                               lay-verType="tips" lay-verify="required" required/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
+                    <div class="layui-input-block">
+                        <input name="password" type="password" placeholder="密码" class="layui-input"
+                               lay-verType="tips" lay-verify="required" required/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><i class="layui-icon layui-icon-vercode"></i></label>
+                    <div class="layui-input-block">
+                        <div class="layui-row inline-block">
+                            <div class="layui-col-xs7">
+                                <input name="captcha" type="text" placeholder="验证码" class="layui-input"
+                                       autocomplete="off" lay-verType="tips" lay-verify="required" required/>
+                            </div>
+                            <div class="layui-col-xs5" style="padding-left: 6px;">
+                                <img class="login-captcha" src="/getVerify">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <a href="javascript:;" class="layui-link">帐号注册</a>
+                    <a href="javascript:;" class="layui-link pull-right">忘记密码？</a>
+                </div>
+                <div class="layui-form-item">
+                    <button lay-filter="login-submit" class="layui-btn layui-btn-fluid" lay-submit>登 录</button>
+                </div>
+                <div class="layui-form-item login-other">
+                    <label>第三方登录</label>
+                    <a href="javascript:;" onclick="qqLogin()"><i class="layui-icon layui-icon-login-qq"></i></a>
+                    <a href="javascript:;"><i class="layui-icon layui-icon-login-wechat"></i></a>
+                    <a href="javascript:;"><i class="layui-icon layui-icon-login-weibo"></i></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="assets/libs/layui/layui.js"></script>
+<script>
+    layui.config({
+        base: 'assets/module/'
+    }).use(['layer', 'form', 'config'], function () {
+        var $ = layui.jquery;
+        var layer = layui.layer;
+        var form = layui.form;
+        var config = layui.config;
+
+        // 表单提交
+        form.on('submit(login-submit)', function (data) {
+            var field = data.field;
+            field.grant_type = 'password';
+            field.scope = 'select';
+            field.client_id = 'client_2';
+            field.client_secret = '123456';
+
+            layer.load(2);
+            $.ajax({
+                url: '/login',
+                data: JSON.stringify(field),
+                type: 'POST',
+                dataType: 'JSON',
+                contentType: 'application/json;charset=UTF-8',
+                success: function (res) {
+                    layer.closeAll('loading');
+                    console.log(res);
+                    if (res.code == 200) {
+                        console.log(res.data);
+                        layer.msg('登录成功', {icon: 1, time: 1500}, function () {
+                            goIndex();
+                        });
+                    } else if(res.code == 20008) {
+                        layer.msg(res.message, {icon: 5});
+                        // 验证码如果不正确，重置验证码。
+                        resetCaptcha();
+                    } else {
+                        layer.msg(res.message, {icon: 5});
+                        // 重置验证码
+                        resetCaptcha();
+                    }
+                },
+                error: function (xhr) {
+                    layer.closeAll('loading');
+                    console.log(xhr);
+                    if (xhr.status == 400) {
+                        layer.msg('账号或密码错误', {icon: 5});
+                        // 重置验证码
+                        resetCaptcha();
+                    } else {
+                        layer.msg('登录失败，服务器错误', {icon: 5});
+                        // 重置验证码
+                        resetCaptcha();
+                    }
+                }
+            });
+            return false;
+        });
+
+        // 重置验证码
+        function resetCaptcha() {
+            var imgSrc = $('.login-captcha').attr('src');
+            $('.login-captcha').attr('src', imgSrc + '?t=' + (new Date).getTime());
+        }
+
+        function goIndex() {
+            location.replace('/spa/index.html');
+        }
+
+        // 图形验证码
+        $('.login-captcha').click(function () {
+            this.src = this.src + '?t=' + (new Date).getTime();
+        });
+
+    });
+
+    // QQ联合登录
+    function qqLogin() {
+        var url = "/oauth/render/qq"; //转向网页的地址;
+        this.window.location.href = url;
+
+        // var url = "/oauth/render/qq";                            //转向网页的地址;
+        // var name = "TencentLogin";                           //网页名称，可为空;
+        // var iWidth = 650;                         //弹出窗口的宽度;
+        // var iHeight = 420;                        //弹出窗口的高度;
+        // //window.screen.height获得屏幕的高，window.screen.width获得屏幕的宽
+        // var iTop = (window.screen.height-30-iHeight)/2;       //获得窗口的垂直位置;
+        // var iLeft = (window.screen.width-10-iWidth)/2;        //获得窗口的水平位置;
+        // var ref= window.open(url,name,'height='+iHeight+',,innerHeight='+iHeight+',width='+iWidth+',innerWidth='+iWidth+',top='+iTop+',left='+iLeft+',toolbar=no,menubar=no,scrollbars=auto,resizeable=no,location=no,status=no');
+    }
+</script>
+</body>
+</html>

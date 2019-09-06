@@ -1,0 +1,271 @@
+<!-- 正文开始 -->
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <div class="layui-form toolbar">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label w-auto">搜索：</label>
+                        <div class="layui-input-inline mr0">
+                            <input id="edtSearchAuth" class="layui-input" type="text" placeholder="输入关键字"/>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <button id="btnSearchAuth" class="layui-btn icon-btn"><i class="layui-icon">&#xe615;</i>搜索
+                        </button>
+                        <button id="btnAddAuth" class="layui-btn icon-btn"><i class="layui-icon">&#xe654;</i>添加</button>
+                        <button id="btnExpandAuth" class="layui-btn icon-btn">全部展开</button>
+                    </div>
+                    <div class="layui-inline">
+                        <button id="btnFoldAuth" class="layui-btn icon-btn">全部折叠</button>
+                    </div>
+                </div>
+            </div>
+
+            <table class="layui-table" id="tableAuth" lay-filter="tableAuth"></table>
+        </div>
+    </div>
+</div>
+<!-- 表格操作列 -->
+<script type="text/html" id="tableBarAuth">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">修改</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<!-- 表单弹窗 -->
+<section id="modelAuth" style="display: none">
+    <form id="modelAuthForm" lay-filter="modelAuthForm" class="layui-form model-form">
+        <input name="authorityId" type="hidden"/>
+        <input name="id" type="hidden"/>
+        <div class="layui-form-item">
+            <label class="layui-form-label">上级菜单</label>
+            <div class="layui-input-block ppp">
+                <select name="pid" lay-search>
+                    <option value="0">顶级菜单</option>
+                    <option p-for="data" p-bind="value: {{id}}">{{pidTitle}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">权限名称</label>
+            <div class="layui-input-block">
+                <input name="name" placeholder="请输入权限名称" type="text" class="layui-input" maxlength="50"
+                       lay-verType="tips" lay-verify="required" required/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">权限类型</label>
+            <div class="layui-input-block">
+                <input name="status" type="radio" value="0" title="禁用" checked/>
+                <input name="status" type="radio" value="1" title="启用"/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">菜单url</label>
+            <div class="layui-input-block">
+                <input name="url" placeholder="请输入菜单url" type="text" class="layui-input"/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">菜单图标</label>
+            <div class="layui-input-block">
+                <input name="icon" placeholder="请输入菜单图标" type="text" class="layui-input"/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">排序号</label>
+            <div class="layui-input-block">
+                <input name="sort" placeholder="请输入排序号" type="number" class="layui-input" min="0" max="1000"
+                       lay-verType="tips" lay-verify="required|number" required/>
+            </div>
+        </div>
+        <div class="layui-form-item text-right">
+            <button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">取消</button>
+            <button class="layui-btn" lay-filter="modelSubmitAuth" lay-submit>保存</button>
+        </div>
+    </form>
+</section>
+<!-- js部分 -->
+
+<script>
+    layui.use(['layer', 'form', 'table', 'admin', 'treetable', 'config'], function () {
+        var $ = layui.jquery;
+        var layer = layui.layer;
+        var form = layui.form;
+        var table = layui.table;
+        var admin = layui.admin;
+        var treetable = layui.treetable;
+        var config = layui.config;
+
+        // 渲染表格
+        function renderTable(data) {
+            treetable.render({
+                treeColIndex: 1,
+                treeSpid: 0,
+                treeIdName: 'id',
+                treePidName: 'pid',
+                elem: '#tableAuth',
+                url: config.base_server + '/menu',
+                data: data,
+                cellMinWidth: 100,
+                cols: [[
+                    {type: 'numbers'},
+                    {field: 'name', title: '菜单名称', minWidth: 200},
+                    {field: 'url', title: '菜单url'},
+                    {field: 'id', title: 'ID'},
+                    {field: 'status', title: '状态', align: 'center'},
+                    {
+                        title: '状态', templet: function (d) {
+                            var strs = ['<span class="layui-badge-rim">禁用</span>', '<span class="layui-badge layui-bg-gray">启用</span>'];
+                            return strs[d.status];
+                        }, align: 'center'
+                    },
+                    {templet: '#tableBarAuth', title: '操作', align: 'center', minWidth: 120}
+                ]]
+            });
+        }
+
+        admin.req('/menu', '', function (res) {
+            if (res.code == 200) {
+                renderTable(res.data);
+                // 对数据进行排序缩进处理
+                var mData = [];
+                var sort = function (s_pid, data, spanNum = 0) {
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].pid == s_pid) {
+                            var len = mData.length;
+                            if (len > 0 && mData[len - 1].id == s_pid) {
+                                mData[len - 1].isParent = true;
+                            }
+                            //缩进个数 data[i].spanNum = spanNum;
+                            var tag = '';
+                            for (var j = 0; j < spanNum; j++) {
+                                tag+= '丨-- ';
+                            }
+                            data[i].pidTitle = tag+data[i].name;
+                            mData.push(data[i]);
+                            sort(data[i].id, data, spanNum+1);
+                        }
+                    }
+                };
+                sort('0', res.data);
+                $('#modelAuth').vm({data: mData});
+
+            } else {
+                layer.msg('获取数据失败', {icon: 2});
+            }
+        }, 'get');
+
+
+        // 添加按钮点击事件
+        $('#btnAddAuth').click(function () {
+            showEditModel();
+        });
+
+        // 工具条点击事件
+        table.on('tool(tableAuth)', function (obj) {
+            var data = obj.data;
+            var layEvent = obj.event;
+            if (layEvent === 'edit') { // 修改
+                showEditModel(data);
+            } else if (layEvent === 'del') { // 删除
+                doDel(data.authorityId, data.authorityName);
+            }
+        });
+
+        // 删除
+        function doDel(authorityId, authorityName) {
+            layer.confirm('确定要删除“' + authorityName + '”吗？', {
+                skin: 'layui-layer-admin',
+                shade: .1
+            }, function (index) {
+                layer.close(index);
+                layer.load(2);
+                admin.req('ok.json', {
+                    authorityId: authorityId
+                }, function (res) {
+                    layer.closeAll('loading');
+                    if (res.code == 200) {
+                        layer.msg(res.msg, {icon: 1});
+                        renderTable();
+                    } else {
+                        layer.msg(res.msg, {icon: 2});
+                    }
+                }, 'get');
+            });
+        }
+
+        // 显示表单弹窗
+        function showEditModel(mAuth) {
+            admin.open({
+                type: 1,
+                title: (mAuth ? '修改' : '添加') + '权限',
+                content: $('#modelAuth').html(),
+                success: function (layero, dIndex) {
+                    $(layero).children('.layui-layer-content').css('overflow', 'visible');
+                    var url = mAuth ? 'ok.json' : '/menu';
+                    if (mAuth && mAuth.isMenu == '1') {
+                        $('#modelAuthForm input[name="isMenu"][value="1"]').prop("checked", true);
+                    }
+                    form.val('modelAuthForm', mAuth);  // 回显数据
+                    // 表单提交事件
+                    form.on('submit(modelSubmitAuth)', function (data) {
+                        if (data.field.parentId == '') {
+                            data.field.parentId = '-1';
+                        }
+                        layer.load(2);
+                        admin.req('/menu', data.field, function (res) {
+                            layer.closeAll('loading');
+                            if (res.code == 200) {
+                                layer.close(dIndex);
+                                layer.msg(res.message, {icon: 1});
+                                renderTable();
+                            } else {
+                                layer.msg(res.message, {icon: 2});
+                            }
+                        }, mAuth ? 'put' : 'post');
+                        return false;
+                    });
+                }
+            });
+        }
+
+        // 搜索按钮点击事件
+        $('#btnSearchAuth').click(function () {
+            $('#edtSearchAuth').removeClass('layui-form-danger');
+            var keyword = $('#edtSearchAuth').val();
+            var $tds = $('#tableAuth').next('.treeTable').find('.layui-table-body tbody tr td');
+            $tds.css('background-color', 'transparent');
+            if (!keyword) {
+                layer.msg("请输入关键字", {icon: 5, anim: 6});
+                $('#edtSearchAuth').addClass('layui-form-danger');
+                $('#edtSearchAuth').focus();
+                return;
+            }
+            var searchCount = 0;
+            $tds.each(function () {
+                if ($(this).text().indexOf(keyword) >= 0) {
+                    $(this).css('background-color', '#FAE6A0');
+                    if (searchCount == 0) {
+                        $('body,html').stop(true);
+                        $('body,html').animate({scrollTop: $(this).offset().top - 150}, 500);
+                    }
+                    searchCount++;
+                }
+            });
+            if (searchCount == 0) {
+                layer.msg("没有匹配结果", {icon: 5, anim: 6});
+            } else {
+                treetable.expandAll('#tableAuth');
+            }
+        });
+
+        $('#btnExpandAuth').click(function () {
+            treetable.expandAll('#tableAuth');
+        });
+
+        $('#btnFoldAuth').click(function () {
+            treetable.foldAll('#tableAuth');
+        });
+
+    });
+</script>
